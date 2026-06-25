@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bismark Choque Choque · Ing. Electrónica UMSA</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/slider.css">
+  <link rel="stylesheet" href="css/social.css">
+</head>
+
+<body>
+
+  <!-- ===== PARTÍCULAS ===== -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar">
+    <div class="nav-logo">
+      <img src="logo.png" alt="BCH Logo" class="nav-logo-img" onerror="this.style.display='none'">
+      <span>BCH</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero" class="active">Inicio</a></li>
+      <li><a href="#stats">Estadísticas</a></li>
+      <li><a href="#slider-section">Galería</a></li>
+      <li><a href="#about">Sobre Mí</a></li>
+      <li><a href="#skills">Habilidades</a></li>
+      <li><a href="#experience">Trayectoria</a></li>
+      <li><a href="#certs">Certificados</a></li>
+      <li><a href="#visitas">Visitas</a></li>
+      <li><a href="#social">Redes</a></li>
+      <li><a href="#contact">Contacto</a></li>
+    </ul>
+    <div class="nav-burger" onclick="toggleMenu()"><i class="fa fa-bars"></i></div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero">
+    <div>
+      <div class="hero-badge">Ing. Electrónica · Mención Control · UMSA</div>
+      <h1 class="hero-name"><span>Bismark Choque</span><br>Choque</h1>
+      <div class="hero-typewriter" id="typewriter"></div>
+      <p class="hero-desc">
+        Estudiante de Ingeniería Electrónica en la Universidad Mayor de San Andrés.
+        Apasionado por la automatización, los sistemas embebidos y la tecnología aplicada.
+      </p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary"><i class="fa fa-paper-plane"></i> Contactarme</a>
+        <a href="CV_-_BISMARK_CHOQUE_CHOQUE_.pdf" class="btn-outline" download>
+          <i class="fa fa-download"></i> Descargar CV
+        </a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>SCROLL</span>
+      <i class="fa fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- ===== STATS ===== -->
+  <section id="stats">
+    <div class="container">
+      <h2 class="section-title">Números que me definen</h2>
+      <div class="stats-grid">
+        <div class="stat-card reveal">
+          <div class="stat-icon"><i class="fa fa-graduation-cap"></i></div>
+          <div class="stat-value" data-target="4" data-suffix="+">0</div>
+          <div class="stat-label">Años en UMSA</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-icon"><i class="fa fa-trophy"></i></div>
+          <div class="stat-value" data-target="5" data-suffix="">0</div>
+          <div class="stat-label">Certificaciones</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-icon"><i class="fa fa-language"></i></div>
+          <div class="stat-value" data-target="3" data-suffix="">0</div>
+          <div class="stat-label">Idiomas</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-icon"><i class="fa fa-cogs"></i></div>
+          <div class="stat-value" data-target="6" data-suffix="">0</div>
+          <div class="stat-label">Cursos Especializados</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SLIDER DE FOTOS ===== -->
+  <section id="slider-section">
+    <div class="container">
+      <h2 class="section-title">Mi Trayectoria en Imágenes</h2>
+      <p class="section-sub">Momentos del laboratorio, proyectos y vida universitaria.</p>
+
+      <div class="slider-wrapper reveal">
+        <div class="slide-counter" id="slideCounter">1 / 12</div>
+        <div class="slider-track" id="sliderTrack"></div>
+        <button class="slider-btn prev" id="sliderPrev" aria-label="Anterior">
+          <i class="fa fa-chevron-left"></i>
+        </button>
+        <button class="slider-btn next" id="sliderNext" aria-label="Siguiente">
+          <i class="fa fa-chevron-right"></i>
+        </button>
+      </div>
+
+      <div class="slider-controls">
+        <div class="slider-dots" id="sliderDots"></div>
+        <button class="autoplay-btn playing" id="autoplayBtn">
+          <i class="fa fa-pause"></i> Auto
+        </button>
+      </div>
+
+      <div class="slider-thumbs" id="sliderThumbs"></div>
+    </div>
+  </section>
+
+  <!-- ===== SOBRE MÍ ===== -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">¿Quién soy?</h2>
+
+      <div class="about-grid">
+        <div class="about-avatar-wrap">
+          <div class="about-glow"></div>
+          <div class="about-avatar reveal">
+            <img src="foto.png" alt="Bismark Choque Choque"
+              onerror="this.parentElement.innerHTML='<div class=\'about-avatar-placeholder\'><i class=\'fa fa-user\'></i></div>'">
+          </div>
+        </div>
+
+        <div>
+          <p style="color:var(--muted); font-size:1rem; line-height:1.9; margin-bottom:24px;" class="reveal">
+            Soy <strong style="color:var(--text)">Bismark Choque Choque</strong>, estudiante de Ingeniería Electrónica
+            con mención en Control en la Facultad de Ingeniería de la UMSA. Me apasionan los sistemas embebidos,
+            la automatización industrial y el diseño de circuitos electrónicos.
+          </p>
+          <p style="color:var(--muted); font-size:1rem; line-height:1.9; margin-bottom:28px;" class="reveal">
+            Cuento con formación técnica previa como <strong style="color:var(--text)">Técnico en Sistemas
+              Informáticos</strong>
+            en el Instituto INCOS, lo que me da una base sólida en hardware, software y redes.
+            Fui <strong style="color:var(--text)">Auxiliar de Docencia</strong> en la Carrera de Ingeniería Electrónica.
+          </p>
+
+          <ul class="info-list reveal">
+            <li>
+              <i class="fa fa-map-marker icon"></i>
+              <div><span class="label">Ubicación</span><span class="val">C/Bernardo Monteagudo, El Alto – La Paz,
+                  Bolivia</span></div>
+            </li>
+            <li>
+              <i class="fa fa-phone icon"></i>
+              <div><span class="label">Teléfono</span><span class="val">+591 71 297 227</span></div>
+            </li>
+            <li>
+              <i class="fa fa-envelope icon"></i>
+              <div><span class="label">Email</span><span class="val">choquechoquebismark678@gmail.com</span></div>
+            </li>
+            <li>
+              <i class="fa fa-birthday-cake icon"></i>
+              <div><span class="label">Fecha de Nacimiento</span><span class="val">16 de febrero de 2003</span></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HABILIDADES ===== -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">Competencias Técnicas</h2>
+      <p class="section-sub">Tecnologías y herramientas que domino en el área de electrónica, control y programación.
+      </p>
+
+      <div class="skills-grid">
+        <!-- COL 1 -->
+        <div>
+          <div class="skill-item reveal">
+            <div class="skill-header">
+              <span class="skill-name"><span class="dot"></span>Electrónica Digital</span>
+              <span class="skill-pct">95%</span>
+            </div>
+            <div class="skill-track">
+              <div class="skill-fill" data-width="95"></div>
+            </div>
+          </div>
+          <div class="skill-item reveal">
+            <div class="skill-header">
+              <span class="skill-name"><span class="dot"></span>Automatización & Control</span>
+              <span class="skill-pct">90%</span>
+            </div>
+            <div class="skill-track">
+              <div class="skill-fill" data-width="90"></div>
+            </div>
+          </div>
+          <div class="skill-item reveal">
+            <div class="skill-header">
+              <span class="skill-name"><span class="dot"></span>Arduino / ESP32</span>
+              <span class="skill-pct">82%</span>
+            </div>
+            <div class="skill-track">
+              <div class="skill-fill" data-width="82"></div>
+            </div>
+          </div>
+          <div class="skill-item reveal">
+            <div class="skill-header">
+              <span class="skill-name"><span class="dot"></span>GNU/Linux</span>
+              <span class="skill-pct">75%</span>
+            </div>
+            <div class="skill-track">
+              <div class="skill-fill" data-width="75"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- COL 2 -->
+        <div>
+          <div class="skill-item reveal">
+            <div class="skill-header">
+              <span class="skill-name"><span class="dot" style="background:var(--gold)"></span>MATLAB / Simulink</span>
+              <span class="skill-pct">70%</span>
+            </div>
+            <div class="skill-track">
+              <div class="skill-fill" data-width="70"
+                style="background:linear-gradient(90deg, var(--green2), var(--gold))"></div>
+            </div>
+          </div>
+          <div class="skill-item reveal">
+            <div class="skill-header">
+              <span class="skill-name"><span class="dot" style="background:var(--gold)"></span>Python</span>
+              <span class="skill-pct">65%</span>
+            </div>
+            <div class="skill-track">
+              <div class="skill-fill" data-width="65"
+                style="background:linear-gradient(90deg, var(--green2), var(--gold))"></div>
+            </div>
+          </div>
+          <div class="skill-item reveal">
+            <div class="skill-header">
+              <span class="skill-name"><span class="dot" style="background:var(--gold)"></span>AutoCAD Electrical</span>
+              <span class="skill-pct">78%</span>
+            </div>
+            <div class="skill-track">
+              <div class="skill-fill" data-width="78"
+                style="background:linear-gradient(90deg, var(--green2), var(--gold))"></div>
+            </div>
+          </div>
+          <div class="skill-item reveal">
+            <div class="skill-header">
+              <span class="skill-name"><span class="dot" style="background:var(--gold)"></span>Redes de Datos</span>
+              <span class="skill-pct">70%</span>
+            </div>
+            <div class="skill-track">
+              <div class="skill-fill" data-width="70"
+                style="background:linear-gradient(90deg, var(--green2), var(--gold))"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="reveal"
+        style="font-size:1.1rem; margin-top:60px; margin-bottom:24px; color:var(--muted); font-weight:600; text-transform:uppercase; letter-spacing:2px; font-family:'JetBrains Mono',monospace;">
+        // Herramientas & Tecnologías</h3>
+      <div class="tools-grid">
+        <div class="tool-chip reveal">
+          <div class="tool-icon"><i class="fa fa-microchip"></i></div>Arduino
+        </div>
+        <div class="tool-chip reveal">
+          <div class="tool-icon"><i class="fa fa-wifi"></i></div>ESP32
+        </div>
+        <div class="tool-chip reveal">
+          <div class="tool-icon"><i class="fa fa-code"></i></div>Python
+        </div>
+        <div class="tool-chip reveal">
+          <div class="tool-icon"><i class="fa fa-calculator"></i></div>MATLAB
+        </div>
+        <div class="tool-chip reveal">
+          <div class="tool-icon"><i class="fa fa-bolt"></i></div>AutoCAD E.
+        </div>
+        <div class="tool-chip reveal">
+          <div class="tool-icon"><i class="fa fa-cube"></i></div>Impresión 3D
+        </div>
+        <div class="tool-chip reveal">
+          <div class="tool-icon"><i class="fa fa-wrench"></i></div>CNC Router
+        </div>
+        <div class="tool-chip reveal">
+          <div class="tool-icon"><i class="fa fa-bullseye"></i></div>CNC Láser
+        </div>
+        <div class="tool-chip reveal">
+          <div class="tool-icon"><i class="fa fa-terminal"></i></div>Linux
+        </div>
+        <div class="tool-chip reveal">
+          <div class="tool-icon"><i class="fa fa-network-wired"></i></div>Redes PON
+        </div>
+        <div class="tool-chip reveal">
+          <div class="tool-icon"><i class="fa fa-shield-alt"></i></div>Ciberseguridad
+        </div>
+        <div class="tool-chip reveal">
+          <div class="tool-icon"><i class="fa fa-file-excel"></i></div>Office
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCIA & FORMACIÓN ===== -->
+  <section id="experience">
+    <div class="container">
+      <h2 class="section-title">Experiencia & Formación</h2>
+      <p class="section-sub">Mi recorrido académico y experiencia práctica en ingeniería electrónica.</p>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:60px;" class="exp-grid">
+        <!-- EXPERIENCIA -->
+        <div>
+          <h3 class="reveal"
+            style="font-size:1rem; font-weight:700; color:var(--green); text-transform:uppercase; letter-spacing:2px; margin-bottom:30px; font-family:'JetBrains Mono',monospace;">
+            // Experiencia</h3>
+          <div class="timeline">
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-card">
+                <div class="tl-period">Jun 2025 – Ago 2025</div>
+                <div class="tl-title">Practicante en Prototipado Digital</div>
+                <div class="tl-where">Instituto de Electrónica Aplicada – Fac. Ing. UMSA</div>
+                <div class="tl-desc">Operación de impresoras 3D, CNC Router y CNC Láser para fabricación de piezas y
+                  desarrollo de prototipos tecnológicos.</div>
+                <div class="tl-tags">
+                  <span class="tl-tag">Impresión 3D</span>
+                  <span class="tl-tag">CNC Router</span>
+                  <span class="tl-tag">CNC Láser</span>
+                </div>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-card">
+                <div class="tl-period">2024</div>
+                <div class="tl-title">Auxiliar de Docencia</div>
+                <div class="tl-where">Ing. Electrónica – Curso Básico · UMSA</div>
+                <div class="tl-desc">Seleccionado para apoyar actividades académicas, colaborar en el desarrollo de
+                  clases y orientar a estudiantes.</div>
+                <div class="tl-tags">
+                  <span class="tl-tag">Docencia</span>
+                  <span class="tl-tag">Electrónica</span>
+                  <span class="tl-tag">UMSA</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FORMACIÓN -->
+        <div>
+          <h3 class="reveal"
+            style="font-size:1rem; font-weight:700; color:var(--gold); text-transform:uppercase; letter-spacing:2px; margin-bottom:30px; font-family:'JetBrains Mono',monospace;">
+            // Formación</h3>
+          <div class="timeline" style="--tl-color: var(--gold);">
+            <div class="tl-item">
+              <div class="tl-dot" style="background:var(--gold); box-shadow:0 0 12px rgba(2,136,209,0.5)"></div>
+              <div class="tl-card">
+                <div class="tl-period" style="color:var(--gold)">Ago 2021 – Presente</div>
+                <div class="tl-title">Ing. Electrónica – Mención Control</div>
+                <div class="tl-where">Universidad Mayor de San Andrés (UMSA)</div>
+                <div class="tl-desc">Formación en sistemas de control, automatización, microprocesadores, electrónica de
+                  potencia y sistemas embebidos.</div>
+                <div class="tl-tags">
+                  <span class="tl-tag"
+                    style="color:var(--gold); border-color:rgba(2,136,209,0.3); background:rgba(2,136,209,0.08)">Control</span>
+                  <span class="tl-tag"
+                    style="color:var(--gold); border-color:rgba(2,136,209,0.3); background:rgba(2,136,209,0.08)">Automatización</span>
+                </div>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot" style="background:var(--gold); box-shadow:0 0 12px rgba(2,136,209,0.5)"></div>
+              <div class="tl-card">
+                <div class="tl-period" style="color:var(--gold)">Feb 2020 – Dic 2022</div>
+                <div class="tl-title">Técnico Superior en Sistemas Informáticos</div>
+                <div class="tl-where">Instituto Técnico Superior INCOS – El Alto</div>
+                <div class="tl-desc">Formación en hardware, software, redes básicas, mantenimiento de equipos,
+                  instalación de SO y soporte técnico.</div>
+                <div class="tl-tags">
+                  <span class="tl-tag"
+                    style="color:var(--gold); border-color:rgba(2,136,209,0.3); background:rgba(2,136,209,0.08)">Hardware</span>
+                  <span class="tl-tag"
+                    style="color:var(--gold); border-color:rgba(2,136,209,0.3); background:rgba(2,136,209,0.08)">Redes</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CERTIFICACIONES ===== -->
+  <section id="certs">
+    <div class="container">
+      <h2 class="section-title">Logros & Certificados</h2>
+      <p class="section-sub">Formación continua en tecnología, redes, automatización y desarrollo.</p>
+
+      <div class="certs-grid">
+        <div class="cert-card">
+          <div class="cert-icon"><i class="fa fa-lock"></i></div>
+          <div class="cert-title">Fundamentos de Ciberseguridad</div>
+          <div class="cert-issuer">Cisco Networking Academy</div>
+          <div class="cert-desc">Conceptos de seguridad informática, identificación de amenazas, protección de redes y
+            buenas prácticas digitales.</div>
+          <div class="cert-date">ENE 2026</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon"><i class="fa fa-code"></i></div>
+          <div class="cert-title">Python Essentials</div>
+          <div class="cert-issuer">Cisco Networking Academy</div>
+          <div class="cert-desc">Fundamentos del lenguaje Python, estructuras de control, manejo de datos y desarrollo
+            de programas.</div>
+          <div class="cert-date">EN CURSO</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon"><i class="fa fa-industry"></i></div>
+          <div class="cert-title">Automatización Industrial</div>
+          <div class="cert-issuer">CESBOL – Col. de Ingenieros de Bolivia</div>
+          <div class="cert-desc">Fundamentos de automatización industrial, control de procesos y sistemas de control en
+            entornos industriales.</div>
+          <div class="cert-date">DIC 2025</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon"><i class="fa fa-bolt"></i></div>
+          <div class="cert-title">AutoCAD Electrical</div>
+          <div class="cert-issuer">TOTALBIM Ingeniería</div>
+          <div class="cert-desc">Diseño de esquemas eléctricos y diagramas de control para instalaciones eléctricas y
+            sistemas de automatización.</div>
+          <div class="cert-date">OCT 2025</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon"><i class="fa fa-network-wired"></i></div>
+          <div class="cert-title">Redes de Datos</div>
+          <div class="cert-issuer">S.I.B. La Paz</div>
+          <div class="cert-desc">Comunicación de redes, direccionamiento IP, arquitectura de redes y principios de
+            conectividad.</div>
+          <div class="cert-date">MAY 2024</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon"><i class="fa fa-sitemap"></i></div>
+          <div class="cert-title">Evolución de las Redes PON</div>
+          <div class="cert-issuer">Fac. Ingeniería UMSA</div>
+          <div class="cert-desc">Redes PON (Passive Optical Networks), fibra óptica, tecnologías de acceso y sistemas de
+            telecomunicaciones.</div>
+          <div class="cert-date">JUL 2025</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTADOR DE VISITAS ===== -->
+  <section id="visitas">
+    <div class="container">
+      <h2 class="section-title">Visitas al Sitio</h2>
+      <p class="section-sub">Personas que han visitado este portafolio desde su publicación.</p>
+
+      <div class="visitas-inner">
+        <!-- Contador -->
+        <div class="counter-widget reveal">
+          <h3><i class="fa fa-users"></i> Contador de Visitas</h3>
+          <div class="big-num" id="visitCount">0</div>
+          <div class="counter-sub">personas han visitado este portafolio</div>
+          <button class="reset-btn" onclick="resetVisits()"><i class="fa fa-redo"></i> Reiniciar</button>
+        </div>
+
+        <!-- Cuenta regresiva -->
+        <div class="counter-widget reveal">
+          <h3><i class="fa fa-hourglass-half"></i> Fin de Curso</h3>
+          <div class="cd-boxes">
+            <div class="cd-box">
+              <div class="cd-val" id="cd-days">00</div>
+              <div class="cd-lbl">Días</div>
+            </div>
+            <div class="cd-box">
+              <div class="cd-val" id="cd-hours">00</div>
+              <div class="cd-lbl">Horas</div>
+            </div>
+            <div class="cd-box">
+              <div class="cd-val" id="cd-min">00</div>
+              <div class="cd-lbl">Min</div>
+            </div>
+            <div class="cd-box">
+              <div class="cd-val" id="cd-sec">00</div>
+              <div class="cd-lbl">Seg</div>
+            </div>
+          </div>
+          <div class="cd-date"><i class="fa fa-calendar-alt" style="color:var(--gold)"></i> 30 de Junio, 2026 ·
+            Desarrollo Web Avanzado</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REDES SOCIALES ===== -->
+  <section id="social">
+    <div class="container">
+      <h2 class="section-title">Conectemos</h2>
+      <p class="section-sub">Seguime en mis redes o contactame directamente por el canal que prefieras.</p>
+
+      <div class="social-grid">
+
+        <a class="social-card reveal" data-net="linkedin"
+          href="https://www.linkedin.com/in/bismark-choque-choque-688012404?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+          target="_blank" rel="noopener">
+          <div class="social-follow-badge">Conectar →</div>
+          <div class="social-icon-wrap"><i class="fab fa-linkedin-in"></i></div>
+          <div class="social-name">LinkedIn</div>
+          <div class="social-handle">Bismark Choque Choque</div>
+          <div class="social-desc">Perfil profesional y red de contactos de ingeniería.</div>
+        </a>
+
+        <a class="social-card reveal" data-net="whatsapp"
+          href="https://wa.me/59171297227?text=Hola%20Bismark,%20vi%20tu%20portafolio" target="_blank" rel="noopener">
+          <div class="social-follow-badge">Chatear →</div>
+          <div class="social-icon-wrap"><i class="fab fa-whatsapp"></i></div>
+          <div class="social-name">WhatsApp</div>
+          <div class="social-handle">+591 71 297 227</div>
+          <div class="social-desc">Contacto directo y rápido para consultas o proyectos.</div>
+        </a>
+
+        <a class="social-card reveal" data-net="email"
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=choquechoquebismark678@gmail.com" target="_blank"
+          rel="noopener">
+          <div class="social-follow-badge">Escribir →</div>
+          <div class="social-icon-wrap"><i class="fa fa-envelope"></i></div>
+          <div class="social-name">Email</div>
+          <div class="social-handle">choquechoquebismark678</div>
+          <div class="social-desc">Para propuestas, colaboraciones o consultas formales.</div>
+        </a>
+
+        <a class="social-card reveal" data-net="instagram"
+          href="https://www.instagram.com/bismark_ch10?igsh=MW1oemRqa3BrdDd6dQ==" target="_blank" rel="noopener">
+          <div class="social-follow-badge">Seguir →</div>
+          <div class="social-icon-wrap"><i class="fab fa-instagram"></i></div>
+          <div class="social-name">Instagram</div>
+          <div class="social-handle">@bismark_ch10</div>
+          <div class="social-desc">Fotos de proyectos, laboratorio y vida universitaria.</div>
+        </a>
+
+        <a class="social-card reveal" data-net="facebook" href="https://www.facebook.com/share/1Gt5PENJNm/"
+          target="_blank" rel="noopener">
+          <div class="social-follow-badge">Seguir →</div>
+          <div class="social-icon-wrap"><i class="fab fa-facebook-f"></i></div>
+          <div class="social-name">Facebook</div>
+          <div class="social-handle">Bismark Choque Choque</div>
+          <div class="social-desc">Actualizaciones académicas y eventos universitarios.</div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACTO ===== -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Hablemos</h2>
+      <p class="section-sub">¿Tenés un proyecto o querés colaborar? Enviame un mensaje y te respondo a la brevedad.</p>
+
+      <div class="contact-grid">
+        <div class="contact-info-card reveal">
+          <div class="contact-item">
+            <div class="contact-icon-wrap"><i class="fa fa-map-marker"></i></div>
+            <div>
+              <div class="contact-text-label">Dirección</div>
+              <div class="contact-text-val">C/Bernardo Monteagudo, Z/Mururata, El Alto – La Paz, Bolivia</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon-wrap"><i class="fa fa-phone"></i></div>
+            <div>
+              <div class="contact-text-label">Teléfono / WhatsApp</div>
+              <div class="contact-text-val">+591 71 297 227</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon-wrap"><i class="fa fa-envelope"></i></div>
+            <div>
+              <div class="contact-text-label">Email</div>
+              <div class="contact-text-val">choquechoquebismark678@gmail.com</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon-wrap"><i class="fa fa-university"></i></div>
+            <div>
+              <div class="contact-text-label">Universidad</div>
+              <div class="contact-text-val">UMSA – Fac. de Ingeniería · Ing. Electrónica</div>
+            </div>
+          </div>
+
+          <div style="margin-top:28px; display:flex; gap:12px; flex-wrap:wrap;">
+            <a href="https://wa.me/59171297227?text=Hola%20Bismark,%20vi%20tu%20portafolio" target="_blank"
+              style="background:#25d366; color:white; padding:12px 22px; border-radius:12px; font-size:0.88rem; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:all 0.3s;"
+              onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(37,211,102,0.4)'"
+              onmouseout="this.style.transform=''; this.style.boxShadow=''">
+              <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=choquechoquebismark678@gmail.com" target="_blank"
+              rel="noopener"
+              style="background:rgba(30,136,229,0.12); color:var(--green); border:1px solid var(--border); padding:12px 22px; border-radius:12px; font-size:0.88rem; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:all 0.3s;"
+              onmouseover="this.style.background='rgba(30,136,229,0.25)'"
+              onmouseout="this.style.background='rgba(30,136,229,0.12)'">
+              <i class="fa fa-envelope"></i> Email
+            </a>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>© <span id="yr"></span> · Desarrollado por <strong>Bismark Choque Choque</strong></p>
+    <p style="margin-top:6px; font-size:0.8rem;">Ing. Electrónica · UMSA · Curso de Desarrollo Web Avanzado</p>
+  </footer>
+
+  <!-- ===== WHATSAPP FAB ===== -->
+  <a href="https://wa.me/59171297227?text=Hola%20Bismark,%20vi%20tu%20portafolio" target="_blank" class="whatsapp-fab"
+    title="Contactar por WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- ===== BACK TO TOP ===== -->
+  <a href="#hero" class="back-top" id="backTop"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="js/particles.js"></script>
+  <script src="js/slider.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

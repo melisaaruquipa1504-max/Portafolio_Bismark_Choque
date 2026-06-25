@@ -1,0 +1,187 @@
+/* ===================================================
+   social.css — Estilos sección Redes Sociales
+   =================================================== */
+
+#social {
+  padding: 80px 5%;
+  background: var(--dark);
+}
+
+/* Grid de tarjetas sociales */
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 10px;
+}
+
+/* Cada tarjeta */
+.social-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 28px 22px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Brillo al hover */
+.social-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: var(--sc-glow, rgba(30,136,229,0.08));
+  opacity: 0;
+  transition: opacity 0.35s;
+  border-radius: inherit;
+}
+.social-card:hover::before { opacity: 1; }
+
+.social-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--sc-color, var(--blue));
+  box-shadow: 0 12px 40px var(--sc-shadow, rgba(30,136,229,0.3));
+  color: var(--text);
+  text-decoration: none;
+}
+
+/* Icono circular */
+.social-icon-wrap {
+  width: 60px; height: 60px;
+  border-radius: 16px;
+  background: var(--sc-bg, rgba(30,136,229,0.1));
+  border: 1px solid var(--sc-border, rgba(30,136,229,0.2));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.7rem;
+  color: var(--sc-color, var(--blue));
+  transition: all 0.35s;
+}
+.social-card:hover .social-icon-wrap {
+  background: var(--sc-color, var(--blue));
+  color: white;
+  box-shadow: 0 6px 20px var(--sc-shadow, rgba(30,136,229,0.5));
+}
+
+.social-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.social-handle {
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-family: 'JetBrains Mono', monospace;
+  transition: color 0.35s;
+}
+.social-card:hover .social-handle { color: var(--sc-color, var(--blue)); }
+
+.social-desc {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* Badge "seguir" */
+.social-follow-badge {
+  position: absolute; top: 14px; right: 14px;
+  background: rgba(38,51,64,0.04);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 0.68rem; color: var(--muted);
+  padding: 3px 10px;
+  font-family: 'JetBrains Mono', monospace;
+  transition: all 0.35s;
+}
+.social-card:hover .social-follow-badge {
+  background: var(--sc-color, var(--blue));
+  border-color: var(--sc-color, var(--blue));
+  color: white;
+}
+
+/* Colores por red — se setean como CSS vars inline */
+/* GitHub */
+.social-card[data-net="github"] {
+  --sc-color: #24292f;
+  --sc-bg: rgba(36,41,47,0.06);
+  --sc-border: rgba(36,41,47,0.15);
+  --sc-glow: rgba(36,41,47,0.05);
+  --sc-shadow: rgba(36,41,47,0.25);
+}
+
+/* LinkedIn */
+.social-card[data-net="linkedin"] {
+  --sc-color: #0a66c2;
+  --sc-bg: rgba(10,102,194,0.1);
+  --sc-border: rgba(10,102,194,0.2);
+  --sc-glow: rgba(10,102,194,0.08);
+  --sc-shadow: rgba(10,102,194,0.35);
+}
+
+/* WhatsApp */
+.social-card[data-net="whatsapp"] {
+  --sc-color: #25d366;
+  --sc-bg: rgba(37,211,102,0.1);
+  --sc-border: rgba(37,211,102,0.2);
+  --sc-glow: rgba(37,211,102,0.08);
+  --sc-shadow: rgba(37,211,102,0.35);
+}
+
+/* Email */
+.social-card[data-net="email"] {
+  --sc-color: #1e88e5;
+  --sc-bg: rgba(30,136,229,0.1);
+  --sc-border: rgba(30,136,229,0.2);
+  --sc-glow: rgba(30,136,229,0.08);
+  --sc-shadow: rgba(30,136,229,0.35);
+}
+
+/* Instagram */
+.social-card[data-net="instagram"] {
+  --sc-color: #e1306c;
+  --sc-bg: rgba(225,48,108,0.1);
+  --sc-border: rgba(225,48,108,0.2);
+  --sc-glow: rgba(225,48,108,0.08);
+  --sc-shadow: rgba(225,48,108,0.35);
+}
+
+/* Facebook */
+.social-card[data-net="facebook"] {
+  --sc-color: #1877f2;
+  --sc-bg: rgba(24,119,242,0.1);
+  --sc-border: rgba(24,119,242,0.2);
+  --sc-glow: rgba(24,119,242,0.08);
+  --sc-shadow: rgba(24,119,242,0.35);
+}
+
+/* Twitter / X */
+.social-card[data-net="twitter"] {
+  --sc-color: #15202b;
+  --sc-bg: rgba(21,32,43,0.05);
+  --sc-border: rgba(21,32,43,0.12);
+  --sc-glow: rgba(21,32,43,0.04);
+  --sc-shadow: rgba(21,32,43,0.2);
+}
+
+/* YouTube */
+.social-card[data-net="youtube"] {
+  --sc-color: #ff0000;
+  --sc-bg: rgba(255,0,0,0.08);
+  --sc-border: rgba(255,0,0,0.18);
+  --sc-glow: rgba(255,0,0,0.06);
+  --sc-shadow: rgba(255,0,0,0.3);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .social-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

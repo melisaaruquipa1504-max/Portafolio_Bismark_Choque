@@ -1,0 +1,189 @@
+/* ===================================================
+   slider.css — Estilos del slider de fotos
+   =================================================== */
+
+#slider-section {
+  padding: 90px 5%;
+  background: var(--dark3);
+}
+
+.slider-wrapper {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 0 60px rgba(30,136,229,0.25);
+  border: 1px solid var(--border);
+  background: var(--card);
+}
+
+/* Track */
+.slider-track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 480px;
+}
+
+/* Cada slide */
+.slide {
+  min-width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Caption del slide */
+.slide-caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 24px 28px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+}
+
+.slide-caption h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.slide-caption p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.7);
+}
+
+/* Botones prev/next */
+.slider-btn {
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: rgba(10,15,30,0.7);
+  border: 1px solid var(--border);
+  color: white; font-size: 1rem;
+  cursor: pointer; z-index: 10;
+  display: flex; align-items: center; justify-content: center;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s;
+}
+.slider-btn:hover {
+  background: var(--blue);
+  box-shadow: 0 4px 20px rgba(30,136,229,0.5);
+  border-color: var(--blue);
+}
+.slider-btn.prev { left: 16px; }
+.slider-btn.next { right: 16px; }
+
+/* Dots indicadores */
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.dot-indicator {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  cursor: pointer;
+  transition: all 0.3s;
+  border: none; padding: 0;
+}
+.dot-indicator.active {
+  background: var(--blue);
+  width: 24px;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(30,136,229,0.6);
+}
+
+/* Thumbnail strip */
+.slider-thumbs {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--blue) transparent;
+}
+
+.slider-thumb {
+  min-width: 80px; height: 56px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s;
+  flex-shrink: 0;
+}
+
+.slider-thumb img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.slider-thumb.active {
+  border-color: var(--blue);
+  box-shadow: 0 0 12px rgba(30,136,229,0.5);
+}
+
+/* Placeholder cuando no hay imagen */
+.slide-placeholder {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  background: linear-gradient(135deg, var(--card), var(--dark2));
+  color: var(--muted); gap: 12px;
+}
+.slide-placeholder i { font-size: 3rem; color: var(--border); }
+.slide-placeholder span { font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; }
+
+/* Contador de slides */
+.slide-counter {
+  position: absolute; top: 16px; right: 16px;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: white; font-size: 0.78rem;
+  font-family: 'JetBrains Mono', monospace;
+  padding: 6px 12px; border-radius: 20px;
+  z-index: 10;
+}
+
+/* Auto-play toggle */
+.slider-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14px;
+  padding: 0 4px;
+}
+
+.autoplay-btn {
+  background: rgba(30,136,229,0.1);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  padding: 6px 14px; border-radius: 20px;
+  font-size: 0.78rem; cursor: pointer;
+  transition: all 0.3s;
+  display: flex; align-items: center; gap: 6px;
+}
+.autoplay-btn:hover { background: rgba(30,136,229,0.2); color: var(--text); }
+.autoplay-btn.playing { color: var(--blue2); border-color: rgba(79,195,247,0.4); }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .slider-track { height: 260px; }
+  .slider-thumb { min-width: 60px; height: 42px; }
+  .slide-caption h3 { font-size: 0.95rem; }
+  .slide-caption { padding: 16px 18px; }
+}
